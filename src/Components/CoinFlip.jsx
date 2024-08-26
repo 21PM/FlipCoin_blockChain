@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { ethers } from 'ethers';
 import './CoinFlip.css'; // Include this for animations
+import { ToastContainer, toast } from 'react-toastify';
+
 
 const CoinFlip = ({ setUpdatedBalance }) => {
   const [outcome, setOutcome] = useState('');
@@ -205,12 +207,12 @@ const CoinFlip = ({ setUpdatedBalance }) => {
 
   const flipCoin = async () => {
     if (isSelectedHead === null) {
-      alert('Please Select either heads or tails');
+      toast.error('Please select either HEADS or TAILS');
       return;
     }
   
     if (!betAmount || parseFloat(betAmount) <= 0) {
-      alert('Please enter a valid bet amount');
+      toast.error('Please check your balance and enter a valid bet amount');
       return;
     }
   
