@@ -11,7 +11,7 @@ function Navbar({ account, balance, onConnect }) {
     return (
         <nav className="bg-gradient-to-r from-blue-900 via-indigo-900 to-purple-900 p-4 text-white">
             <div className="container mx-auto flex flex-wrap items-center justify-between">
-                <h1 className="text-2xl font-bold mb-2 sm:mb-0">Ether Balance App</h1>
+                <h1 className="text-2xl font-bold mb-2 sm:mb-0">Flip Coin App</h1>
                 <div className="flex flex-wrap gap-4 sm:gap-10 items-center">
                     {account && balance && (
                      <div
