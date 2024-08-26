@@ -14,11 +14,13 @@ function Navbar({ account, balance, onConnect }) {
                 <h1 className="text-2xl font-bold mb-2 sm:mb-0">Ether Balance App</h1>
                 <div className="flex flex-wrap gap-4 sm:gap-10 items-center">
                     {account && balance && (
-                      <div
-                      className="bg-gradient-to-r from-teal-500 to-cyan-500 px-4 py-2 rounded-lg text-white font-bold flex items-center text-sm sm:text-base break-words whitespace-pre-wrap"
-                  >
-                      Address: <p className="ml-2">{account} ETH</p>
-                  </div>
+                     <div
+                     className="bg-gradient-to-r from-teal-500 to-cyan-500 px-4 py-2 rounded-lg text-white font-bold flex items-center text-sm sm:text-base w-full max-w-xs sm:max-w-sm lg:max-w-md"
+                   >
+                     Address: <p className="ml-2 overflow-hidden text-ellipsis whitespace-nowrap">{account} ETH</p>
+                   </div>
+                   
+                        
                     )}
 
                     <div

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ethers } from 'ethers';
 import Navbar from './NavBar';
-
+import CoinFlip from './CoinFlip';
 
 function Connection() {
     const [account, setAccount] = useState(null);
@@ -9,7 +9,7 @@ function Connection() {
 
     async function handleConnect() {
         if (!window.ethereum) {
-            alert('Kindly install MetaMask');
+            alert('Kindly install MetaMask extension');
             return;
         }
 
@@ -21,6 +21,12 @@ function Connection() {
         const balanceInEther = ethers.formatEther(balanceInWei);
 
         setBalance(balanceInEther);
+    }
+
+    function setUpdatedBalance(updatedbalance){
+        console.log("Updating balance to:", updatedbalance); // Debugging line
+
+        setBalance(updatedbalance)
     }
 
     return (
@@ -40,12 +46,14 @@ function Connection() {
                     </div>
                 </main>
             )}
+
+            {
+
+            }
             {balance && (
                 <main className="bg-gradient-to-br from-gray-800 via-gray-900 to-black text-white flex items-center justify-center h-screen">
-                    {/* Coin flip game logic goes here */}
                     <div className="text-center">
-                        <h1 className="text-4xl font-bold mb-4">Welcome to the Coin Flip Game!</h1>
-                        {/* Add coin flip game UI and logic here */}
+                        <CoinFlip setUpdatedBalance={setUpdatedBalance}/>
                     </div>
                 </main>
             )}
