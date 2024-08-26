@@ -219,6 +219,8 @@ const CoinFlip = ({ setUpdatedBalance }) => {
     setOutcome('');
     setWin('');
     setLost('');
+    setError('');
+    setBetAmount('')
     setIsFlipping(true); // Start the animation
     setIsloading(true)
   
