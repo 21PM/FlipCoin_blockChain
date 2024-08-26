@@ -258,8 +258,8 @@ const CoinFlip = ({ setUpdatedBalance }) => {
 
 
     } catch (error) {
-      console.error("Error placing bet:", error);
-      setError(`Failed to place bet. ${error.message || 'Unknown error'}`);
+      console.error("Error placing bet: [please place a bet of 0.001 and try ] ", error);
+      setError(`Failed to place bet. [please place a bet of 0.001 and try ]${error.message || 'Unknown error'}`);
     } finally {
       setIsFlipping(false); // Stop the animation
     setIsloading(false)
